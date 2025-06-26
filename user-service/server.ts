@@ -1,11 +1,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import authRoutes from './routes/auth.routes';
-import userRoutes from './routes/user.routes';
-import { authenticateToken } from './middleware/authenticateToken';
-import { loggingMiddleware } from './middleware/loggingMiddleware';
-import { errorHandlerMiddleware } from './middleware/errorHandlerMiddleware';
+import authRoutes from './src/routes/auth.routes';
+import userRoutes from './src/routes/user.routes';
+import { authenticateToken } from './src/middleware/authenticateToken';
+import { loggingMiddleware } from './src/middleware/loggingMiddleware';
+import { errorHandlerMiddleware } from './src/middleware/errorHandlerMiddleware';
 
 dotenv.config();
 

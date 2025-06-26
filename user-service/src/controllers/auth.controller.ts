@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { User } from '../models/user.model';
 import bcrypt from 'bcryptjs';
+import { User, IUser } from '../models/user.model';
 import { generateToken } from '../utils/generateToken';
 
 export const registerUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -35,7 +35,8 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
   try {
     const { username, password } = req.body;
 
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ username }).lean<IUser | null>();
+
     if (!user) {
       res.status(401).json({ message: 'Invalid username or password' });
       return;
@@ -48,6 +49,7 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
     }
 
     const token = generateToken(user._id.toString(), user.role);
+
     res.status(200).json({ success: true, token });
   } catch (error) {
     next(error);

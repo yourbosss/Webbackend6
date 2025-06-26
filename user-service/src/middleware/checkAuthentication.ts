@@ -1,5 +1,5 @@
 import { Response, NextFunction } from 'express';
-import { AuthenticatedRequest } from '../types/express';
+import { AuthenticatedRequest } from '../types/express.d';
 
 export const checkAuthentication = (
   req: AuthenticatedRequest,

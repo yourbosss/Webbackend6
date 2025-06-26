@@ -1,6 +1,11 @@
-FROM node
+FROM node:18-alpine
+
 WORKDIR /app
-COPY package*.json ./
-RUN yarn install
-COPY ./ ./
-CMD ["yarn", "run", "dev"]
+
+COPY package.json  ./
+
+COPY . .
+
+EXPOSE 3001
+
+CMD ["yarn", "run", "dev", "--host", "0.0.0.0"]

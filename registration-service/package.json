@@ -4,6 +4,11 @@
     "express": "^5.1.0",
     "mongoose": "^8.16.1"
   },
+   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
   "devDependencies": {
     "@types/amqplib": "^0.10.7",
     "@types/express": "^5.0.3",

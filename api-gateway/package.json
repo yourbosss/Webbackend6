@@ -8,9 +8,15 @@
     "http-proxy-middleware": "^3.0.5"
   },
   "devDependencies": {
+    "ts-node-dev": "^2.0.0",
     "@types/express": "^5.0.3",
     "@types/http-proxy-middleware": "^1.0.0",
     "@types/node": "^24.0.4",
     "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   }
 }

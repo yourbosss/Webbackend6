@@ -1,0 +1,11 @@
+{
+  "name": "WebBackend6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yourbosss/Webbackend6.git",
+  "author": "BIG BO$$$ <kseniia.bosss@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}
